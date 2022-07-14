@@ -10,7 +10,7 @@ addpath('D:\tfsa_5-5\windows\win64_bin');
 
 %crossing componentsi8
 
-s1=1.*exp(2*pi*1i*(0.05*n+0.3*n.^3/(128*128*3)));
+s1=gausswin(128,2).'.*exp(2*pi*1i*(0.05*n+0.3*n.^3/(128*128*3)));
 %s2=1*exp(2*pi*1i*(0.32*n-0*0.3*n.^3/(128*128*3)));
 s3=1.*exp(2*pi*1i*(0.08*n+1*0.3*n.^3/(128*128*3)));
 
@@ -41,7 +41,7 @@ num=n_sources;
 
 
 A=exp(1j*pi*2*(rand(N_sensors,5)-0.5));
-%A=(3*rand(N_sensors,5)+3).*exp(1j*pi*2*(rand(N_sensors,5)-0.5));
+A=(3*rand(N_sensors,5)+3).*exp(1j*pi*2*(rand(N_sensors,5)-0.5));
 
 
 X = A*s.';
